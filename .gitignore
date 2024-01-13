@@ -2,4 +2,5 @@
 *.rej
 *.png
 dwm
+config.h
 
