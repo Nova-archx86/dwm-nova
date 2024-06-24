@@ -73,7 +73,7 @@ static const char *wallpaper[] = { "nitrogen", "/home/nova/wallpapers", NULL };
 static const char *explorer[] = {"pcmanfm", "/home/nova", NULL };
 static const char *volup[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05+", NULL };
 static const char *voldw[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05-", NULL };
-
+static const char *music[] = {"/home/nova/bin/music.sh", NULL};
 static Key keys[] = {
 	/* modifier                     key        function        argument */
     { MODKEY|ShiftMask,             XK_z,      spawn,          {.v = wallpaper } },  
@@ -100,6 +100,7 @@ static Key keys[] = {
 		
 	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask, 						XK_m,			 spawn,					 {.v = music}},
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
