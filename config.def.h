@@ -18,11 +18,11 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_lime[]        = "#00FF00";
+static const char col_lime[]        = "#ADFF2F";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_lime,  col_lime  },
+	[SchemeNorm] = { col_lime, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray1, col_lime,  col_lime  },
 };
 
 /* tagging */
@@ -64,7 +64,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_lime, "-sf", col_gray4, "-l", "10", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_lime, "-sf", col_gray1, "-l", "10", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *screencmd[] = { "shotgun", NULL };
 static const char *web[] = { "librewolf", NULL };
