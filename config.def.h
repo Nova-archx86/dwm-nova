@@ -21,8 +21,8 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_light_blue_4[]        = "#98fb98";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_light_blue_4, col_gray2, col_light_blue_4 },
-	[SchemeSel]  = { col_gray2, col_light_blue_4,  col_light_blue_4  },
+	[SchemeNorm] = { col_light_blue_4, col_gray2, "#00aad4" },
+	[SchemeSel]  = { col_gray2, col_light_blue_4, "#00aad4" },
 };
 
 /* tagging */
@@ -66,7 +66,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray2, "-nf", col_gray3, "-sb", col_light_blue_4, "-sf", col_gray2, "-l", "10", NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *screencmd[] = { "shotgun", NULL };
 static const char *web[] = { "librewolf", NULL };
 static const char *lock[] = { "slock", NULL };
 static const char *wallpaper[] = { "nitrogen", "/home/nova/wallpapers", NULL };
@@ -74,15 +73,17 @@ static const char *explorer[] = {"pcmanfm", "/home/nova", NULL };
 static const char *volup[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05+", NULL };
 static const char *voldw[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05-", NULL };
 static const char *music[] = {"/home/nova/bin/music.sh", NULL};
+static const char *emacs[] = {"emacsclient", "-c", NULL};
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
     { MODKEY|ShiftMask,             XK_z,      spawn,          {.v = wallpaper } },  
-    { MODKEY,                       XK_x,      spawn,          {.v = lock } },  
-    { MODKEY,                       XK_s,      spawn,          {.v = screencmd } }, 
+    { MODKEY|ShiftMask,             XK_x,      spawn,          {.v = lock } },
     { MODKEY,                       XK_f,      spawn,          {.v = web } },
     { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	  { MODKEY, 											XK_e, 		 spawn, 				 {.v = explorer } },
-	  { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY, 					    XK_e, 	   spawn, 		   {.v = explorer } },
+	{ MODKEY|ShiftMask, 			XK_e, 	   spawn, 		   {.v = emacs } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_j,      spawn,     			 {.v = volup } },
