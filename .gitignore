@@ -3,4 +3,5 @@
 *.png
 dwm
 config.h
-
+patches/
+*.orig
