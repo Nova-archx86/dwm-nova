@@ -18,15 +18,15 @@ static const char col_blue[]       = "#2b4071";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_light_blue_4[]        = "#98fb98";
+static const char col_light_blue_4[]        = "#848eff";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_light_blue_4, col_gray2, "#00aad4" },
-	[SchemeSel]  = { col_gray2, col_light_blue_4, "#00aad4" },
+	[SchemeNorm] = { col_light_blue_4, col_gray2, "#848eff" },
+	[SchemeSel]  = { col_gray2, col_light_blue_4, "#848eff" },
 };
 
 /* tagging */
-	static const char *tags[] = { "󰣇 ", " ", " ", "󰈹 ", " ", "󰭻 ", "󰪶 ", " ", " " };
+static const char *tags[] = { "󰣇 ", " ", " ", "󰈹 ", " ", "󰭻 ", "󰪶 ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -34,8 +34,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+  { "Discord",  NULL,       NULL,       0,            1,           -1 },
+  { "Gimp",     NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -73,7 +73,6 @@ static const char *explorer[] = {"pcmanfm", "/home/nova", NULL };
 static const char *volup[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05+", NULL };
 static const char *voldw[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05-", NULL };
 static const char *music[] = {"/home/nova/bin/music.sh", NULL};
-static const char *emacs[] = {"emacsclient", "-c", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
