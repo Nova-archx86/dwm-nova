@@ -68,12 +68,12 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *web[] = { "librewolf", NULL };
 static const char *lock[] = { "slock", NULL };
-static const char *wallpaper[] = { "nitrogen", "/home/nova/wallpapers", NULL };
+static const char *wallpaper[] = { "nitrogen", "/home/nova/Sync/wallpapers", NULL };
 static const char *explorer[] = {"pcmanfm", "/home/nova", NULL };
 static const char *volup[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05+", NULL };
 static const char *voldw[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05-", NULL };
 static const char *music[] = {"/home/nova/bin/music.sh", NULL};
-
+static const char *emacs[] = {"emacsclient", "-c", NULL};
 static Key keys[] = {
 	/* modifier                     key        function        argument */
     { MODKEY|ShiftMask,             XK_z,      spawn,          {.v = wallpaper } },  
@@ -81,6 +81,7 @@ static Key keys[] = {
     { MODKEY,                       XK_f,      spawn,          {.v = web } },
     { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY, 					    XK_e, 	   spawn, 		   {.v = explorer } },
+	{ MODKEY|ShiftMask, 			XK_e, 	   spawn, 		   {.v = emacs } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
